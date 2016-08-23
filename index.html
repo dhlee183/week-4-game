@@ -16,29 +16,92 @@
 	
 	<div class="container">
 
-		<div class="jumbotron">
-			<h1 class="text-center">Star Wars RPG</h1>
-		</div>	
+		<!-- Player Selection -->
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="panel panel-default">
+					<div class="panel-heading" style="text-align: center">
+						<h2>Choose Player Character</h2>
+					</div>
+					<div class="panel-body" style="text-align: center">
+						<button id="obiK" class="btn btn-md character" value=150><span class="label label-default">Obi-Wan Kenobi</span><img src="assets/images/obiwan.jpg" class="img-responsive" width="93"><span class="label label-default">150</span></button>
 
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h3 class="panel-title">Choose Character</h3>
+						<button id="aniS" class="btn btn-md character" value=125><span class="label label-default">Anakin Skywalker</span><img src="assets/images/anakinskywalker.jpg" class="img-responsive" width="100"><span class="label label-default">125</span></button>
+
+						<button id="empP" class="btn btn-md character" value=175><span class="label label-default">Emperor Palpatine</span><img src="assets/images/palpatine.jpg" class="img-responsive" width="110"><span class="label label-default">175</span></button>
+
+						<button id="darM" class="btn btn-md character" value=100><span class="label label-default">Darth Maul</span><img src="assets/images/darthmaul.png" class="img-responsive" width="90"><span class="label label-default">100</span></button>
+					</div>
+				</div>
 			</div>
-			<div class="panel-body">
-				<button></button>
+
+			<!-- Enemy Selection -->
+			<div class="col-lg-6">
+				<div class="panel panel-default">
+					<div class="panel-heading" style="text-align: center">
+						<h2>Choose Enemy Character</h2>
+					</div>
+					<div class="panel-body" style="text-align: center">
+						<h2 id="chooseenemyChar"></h2>
+					</div>	
+				</div>
 			</div>
+		</div>
+
+		<!-- Player Character -->
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="panel panel-default">
+					<div class="panel-heading" style="text-align: center">
+						<h2>Player Character</h2>
+					</div>	
+					<div class="panel-body" style="text-align: center">
+						<h2 id="playerChar"></h2>
+							<div>
+								<button class="btn btn-md">Attack</button>
+							</div>	
+					</div>
+				</div>
+			</div>
+
+			<!-- Enemy Character -->
+			<div class="col-lg-6">	
+				<div class="panel panel-default">
+					<div class="panel-heading" style="text-align: center">
+						<h2>Enemy Character</h2>
+					</div>
+					<div class="panel-body" style="text-align: center">
+						<h2 id="enemyChar"></h2>
+					</div>
+				</div>
+			</div>	
 		</div>
 
 	</div>
 
 	<script type="text/javascript">
 		
+	$(document).ready(function(){
 
+		var charChosen;
+		var remainChar;
 
+		$("button").on("click", function() {
 
+			if ($(this).hasClass("character")) {
 
+				charChosen = $(this).val("id");
 
+				$("#playerChar").replaceWith(charChosen);
+			
+			} else {
 
+				$("#chooseenemyChar").replaceWith(charChosen);
+			}	
+
+		});
+
+	});
 
 	</script>
 
