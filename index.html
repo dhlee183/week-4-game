@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	
+
 	<meta charset="UTF-8">
 
 	<title>Star Wars RPG</title>
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" src="assets/css/reset.css">
+
+	<link rel="stylesheet" type="text/css" src="assets/css/style.css">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">s
 
 	<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
 
@@ -20,10 +24,10 @@
 		<div class="row">
 			<div class="col-lg-6">
 				<div class="panel panel-default">
-					<div class="panel-heading" style="text-align: center">
+					<div class="panel-heading text-center">
 						<h2>Choose Player Character</h2>
 					</div>
-					<div class="panel-body" style="text-align: center">
+					<div id="setChar" class="panel-body text-center">
 						<button id="obiK" class="btn btn-md character" value=150><span class="label label-default">Obi-Wan Kenobi</span><img src="assets/images/obiwan.jpg" class="img-responsive" width="93"><span class="label label-default">150</span></button>
 
 						<button id="aniS" class="btn btn-md character" value=125><span class="label label-default">Anakin Skywalker</span><img src="assets/images/anakinskywalker.jpg" class="img-responsive" width="100"><span class="label label-default">125</span></button>
@@ -38,11 +42,11 @@
 			<!-- Enemy Selection -->
 			<div class="col-lg-6">
 				<div class="panel panel-default">
-					<div class="panel-heading" style="text-align: center">
+					<div class="panel-heading text-center">
 						<h2>Choose Enemy Character</h2>
 					</div>
-					<div class="panel-body" style="text-align: center">
-						<h2 id="chooseenemyChar"></h2>
+					<div class="panel-body text-center">
+						<div id="chooseenemyChar"></div>
 					</div>	
 				</div>
 			</div>
@@ -52,13 +56,13 @@
 		<div class="row">
 			<div class="col-lg-6">
 				<div class="panel panel-default">
-					<div class="panel-heading" style="text-align: center">
+					<div class="panel-heading text-center">
 						<h2>Player Character</h2>
 					</div>	
-					<div class="panel-body" style="text-align: center">
-						<h2 id="playerChar"></h2>
+					<div class="panel-body text-center">
+						<div id="playerChar"></div>
 							<div>
-								<button class="btn btn-md">Attack</button>
+								<button id="atk" class="btn btn-md attack">Attack</button>
 							</div>	
 					</div>
 				</div>
@@ -67,11 +71,11 @@
 			<!-- Enemy Character -->
 			<div class="col-lg-6">	
 				<div class="panel panel-default">
-					<div class="panel-heading" style="text-align: center">
+					<div class="panel-heading text-center">
 						<h2>Enemy Character</h2>
 					</div>
-					<div class="panel-body" style="text-align: center">
-						<h2 id="enemyChar"></h2>
+					<div class="panel-body text-center">
+						<div id="enemyChar"></div>
 					</div>
 				</div>
 			</div>	
@@ -79,31 +83,7 @@
 
 	</div>
 
-	<script type="text/javascript">
-		
-	$(document).ready(function(){
-
-		var charChosen;
-		var remainChar;
-
-		$("button").on("click", function() {
-
-			if ($(this).hasClass("character")) {
-
-				charChosen = $(this).val("id");
-
-				$("#playerChar").replaceWith(charChosen);
-			
-			} else {
-
-				$("#chooseenemyChar").replaceWith(charChosen);
-			}	
-
-		});
-
-	});
-
-	</script>
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
 
 </body>
 </html>
