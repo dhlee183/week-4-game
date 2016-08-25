@@ -6,19 +6,21 @@
 
 	<title>Star Wars RPG</title>
 
-	<!-- <link rel="stylesheet" type="text/css" src="assets/css/reset.css"> -->
-
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-	<link rel="stylesheet" type="text/css" src="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 	<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
 
 </head>	
 
 <body>
-	
+
 	<div class="container">
+
+		<div class="jumbotron text-center"><h1>STAR WARS RPG</h1></div>
 
 		<!-- Player Selection -->
 		<div class="row">
@@ -28,13 +30,13 @@
 						<h2>Choose Player Character</h2>
 					</div>
 					<div id="setChar" class="panel-body text-center">
-						<button id="obiK" class="btn btn-md character" value=150><span class="label label-default">Obi-Wan Kenobi</span><img src="assets/images/obiwan.jpg" class="img-responsive" width="93"><span class="label label-default">150</span></button>
+						<button id="obiK" class="btn btn-md character"><span class="label label-default">Obi-Wan Kenobi</span><img src="assets/images/obiwan.jpg" class="img-responsive" width="93"></button>
 
-						<button id="aniS" class="btn btn-md character" value=125><span class="label label-default">Anakin Skywalker</span><img src="assets/images/anakinskywalker.jpg" class="img-responsive" width="100"><span class="label label-default">125</span></button>
+						<button id="aniS" class="btn btn-md character"><span class="label label-default">Anakin Skywalker</span><img src="assets/images/anakinskywalker.jpg" class="img-responsive" width="100"></button>
 
-						<button id="empP" class="btn btn-md character" value=175><span class="label label-default">Emperor Palpatine</span><img src="assets/images/palpatine.jpg" class="img-responsive" width="110"><span class="label label-default">175</span></button>
+						<button id="empP" class="btn btn-md character"><span class="label label-default">Emperor Palpatine</span><img src="assets/images/palpatine.jpg" class="img-responsive" width="110"></button>
 
-						<button id="darM" class="btn btn-md character" value=100><span class="label label-default">Darth Maul</span><img src="assets/images/darthmaul.png" class="img-responsive" width="90"><span class="label label-default">100</span></button>
+						<button id="darM" class="btn btn-md character"><span class="label label-default">Darth Maul</span><img src="assets/images/darthmaul.png" class="img-responsive" width="90"></button>
 					</div>
 				</div>
 			</div>
@@ -61,6 +63,7 @@
 					</div>	
 					<div class="panel-body text-center">
 						<div id="playerChar"></div>
+							<div id="playerHP"></div>
 							<div>
 								<button id="atk" class="btn btn-md attack">Attack</button>
 							</div>	
@@ -76,6 +79,7 @@
 					</div>
 					<div class="panel-body text-center">
 						<div id="enemyChar"></div>
+						<div id="enemyHP"></div>
 					</div>
 				</div>
 			</div>	

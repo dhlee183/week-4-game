@@ -4,12 +4,13 @@ $(document).ready(function(){
 	var moveEnemy;
 	var chosenEnemy;
 
-	$(".character").on("click", function() {
-			
+	$("button").on("click", function() {
+		if ($(this).hasClass("character")) {	
 		// Choose Character to Play With	
 		var chosenCharacter = $(this);
 			console.log(this);
-			$('#playerChar').append(chosenCharacter);
+			$('#playerChar').append(chosenCharacter);	
+			$('#playerHP').html();
 
 		// Moves Remaining Characters to Choose Enemy Section	
 		var moveEnemy = $('.character').not(this);
@@ -24,13 +25,13 @@ $(document).ready(function(){
 
 		});
 
+    	}
+
+    	if ($(this).hasClass("attack")) {
+
+    	}
+
     }); 
-
-    $(".attack").on("click", function() {
-    	
-    	
-
-    });    	
 
 });
 
