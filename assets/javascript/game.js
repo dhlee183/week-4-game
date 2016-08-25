@@ -5,7 +5,7 @@ $(document).ready(function(){
 	var chosenEnemy;
 	var chosenPlayerHP = 0;
 	var chosenEnemyHP = 0;
-	var random = Math.floor(Math.random() * 2);
+	var random = Math.floor((Math.random() * 6) - 1);
 
 	$("button").on("click", function() {
 		if ($(this).hasClass("character")) {	
@@ -15,6 +15,10 @@ $(document).ready(function(){
 			$('#playerChar').append(chosenCharacter);
 		var chosenPlayerHP = this.value;		
 			$('#playerHP').html("HP " + chosenPlayerHP);
+		$("#atk").on("click", function() {
+			chosenPlayerHP--;
+			$('#playerHP').html("HP " + chosenPlayerHP);
+		});	
 
 		// Moves Remaining Characters to Choose Enemy Section	
 		var moveEnemy = $('.character').not(this);
@@ -25,21 +29,17 @@ $(document).ready(function(){
         moveEnemy.on("click", function() {
 			var chosenEnemy = $(this);
 				$("#enemyChar").append(chosenEnemy);
+
 			var chosenEnemyHP = this.value;		
 				$('#enemyHP').html("HP " + chosenEnemyHP);
+
+			$("#atk").on("click", function() {
+				chosenEnemyHP--;
+				$('#enemyHP').html("HP " + chosenEnemyHP);
+			});
 				$('#playerChar').append(chosenCharacter);
 
 		});
-
-    	}
-
-    	if ($(this).hasClass("attack")) {
-    		chosenPlayerHP--;
-    		chosenPlayerHP = $('.character').value;
-    		$('#playerHP').html("HP " + chosenPlayerHP + random);
-    		chosenEnemyHP--;
-    		chooseEnemyHP = $('.character').value;
-    		$('#enemyHP').html("HP " + chosenEnemyHP + random);
 
     	}
 
