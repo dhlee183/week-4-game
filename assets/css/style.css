@@ -1,3 +1,11 @@
 body{
-    background: url(../images/starwarsbg.jpg) no-repeat;
+    background-image: url(../images/logo.jpg);
+    background-color: black;
+    background-position: left;
+     background-repeat: round;
+     background-attachment: fixed;
+     background-size: cover;
+     -webkit-background-size: contain;
+     -moz-background-size: cover;
+     -o-background-size: cover;
 }
